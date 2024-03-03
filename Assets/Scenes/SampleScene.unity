@@ -223,6 +223,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1265296696343389323, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
+      propertyPath: Bullet
+      value: 
+      objectReference: {fileID: 814501897789557598, guid: fcc343aafcd86004ba29c34d044d2878, type: 3}
     - target: {fileID: 1331931907413672896, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -266,6 +270,10 @@ PrefabInstance:
     - target: {fileID: 1982005905431299565, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
       propertyPath: m_Name
       value: Submarine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2694640167559581306, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
+      propertyPath: Speed
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
