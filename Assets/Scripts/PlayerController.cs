@@ -5,7 +5,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float Speed = 20.0f;
-    public float MaxHeight = 6.0f;
+    public float MaxY = 3.0f;
+    public float MinY = -4.0f;
+    public float MaxMinX = 7.0f;
+    public GameObject BulletsParent;
 
     // Start is called before the first frame update
     void Start()
@@ -35,10 +38,15 @@ public class PlayerController : MonoBehaviour
             transform.eulerAngles = new Vector3(transform.eulerAngles.x, 0.0f, transform.eulerAngles.z);
         }
 
-        Vector3 nextPosition = transform.position + direction.normalized * Speed * Time.deltaTime;
+        Vector3 nextPosition = transform.position + Speed * Time.deltaTime * direction.normalized;
 
-        nextPosition.y = Mathf.Min(nextPosition.y, MaxHeight);
+        nextPosition.x = Mathf.Min(nextPosition.x, MaxMinX);
+        nextPosition.x = Mathf.Max(nextPosition.x, -MaxMinX);
+
+        nextPosition.y = Mathf.Min(nextPosition.y, MaxY);
+        nextPosition.y = Mathf.Max(nextPosition.y, MinY);
 
         transform.position = nextPosition;
+        BulletsParent.transform.position = transform.position;
     }
 }
