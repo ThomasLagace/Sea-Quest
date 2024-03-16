@@ -215,6 +215,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &783988739
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 783988740}
+  m_Layer: 0
+  m_Name: Bullets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &783988740
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783988739}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3846366870647902645
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -227,6 +258,30 @@ PrefabInstance:
       propertyPath: Bullet
       value: 
       objectReference: {fileID: 814501897789557598, guid: fcc343aafcd86004ba29c34d044d2878, type: 3}
+    - target: {fileID: 1265296696343389323, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
+      propertyPath: BallsParent
+      value: 
+      objectReference: {fileID: 783988739}
+    - target: {fileID: 1265296696343389323, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
+      propertyPath: BulletSpeed
+      value: 1500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1265296696343389323, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
+      propertyPath: BulletsParent
+      value: 
+      objectReference: {fileID: 783988739}
+    - target: {fileID: 1331931907413672896, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.6945493
+      objectReference: {fileID: 0}
+    - target: {fileID: 1331931907413672896, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6500995
+      objectReference: {fileID: 0}
+    - target: {fileID: 1331931907413672896, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6500995
+      objectReference: {fileID: 0}
     - target: {fileID: 1331931907413672896, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -245,15 +300,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1331931907413672896, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1331931907413672896, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1331931907413672896, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1331931907413672896, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -272,9 +327,25 @@ PrefabInstance:
       value: Submarine
       objectReference: {fileID: 0}
     - target: {fileID: 2694640167559581306, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
-      propertyPath: Speed
-      value: 10
+      propertyPath: MaxY
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2694640167559581306, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
+      propertyPath: Speed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2694640167559581306, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
+      propertyPath: MaxMinX
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2694640167559581306, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
+      propertyPath: BallsParent
+      value: 
+      objectReference: {fileID: 783988739}
+    - target: {fileID: 2694640167559581306, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
+      propertyPath: BulletsParent
+      value: 
+      objectReference: {fileID: 783988739}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -285,4 +356,5 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
+  - {fileID: 783988740}
   - {fileID: 3846366870647902645}
