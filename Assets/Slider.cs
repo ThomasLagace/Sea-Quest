@@ -6,22 +6,36 @@ using UnityEngine.UI;
 
 public class Example : MonoBehaviour
 {
-    int oxyLevel = 0;
+    float oxyLevel = 100;
     public Slider slider;
-    public Transform submarine; // Référence à l'objet représentant le sous-marin
+    public Transform submarine;
+    public float descentThreshold = 3f; 
+    public float decreaseSpeed = 5f; 
+    public float increaseSpeed = 5f; 
 
     void Update()
     {
-        // Vérifiez la position du sous-marin en y
-        if (submarine.position.y < 3f)
+        if (submarine.position.y < descentThreshold)
         {
-            UpdateOxygen(); // Augmentez le niveau d'oxygène
+            DecreaseOxygen();
+        }
+        else
+        {
+            IncreaseOxygen();
         }
     }
 
-    public void UpdateOxygen()
+    public void DecreaseOxygen()
     {
-        oxyLevel--;
-        slider.value = oxyLevel;
+        oxyLevel = Mathf.Lerp(oxyLevel, 0, Time.deltaTime * decreaseSpeed); 
+        slider.value = oxyLevel; 
+    }
+
+    public void IncreaseOxygen()
+    {
+        oxyLevel = Mathf.Lerp(oxyLevel, 100, Time.deltaTime * increaseSpeed);
+        slider.value = oxyLevel; 
     }
 }
+
+
