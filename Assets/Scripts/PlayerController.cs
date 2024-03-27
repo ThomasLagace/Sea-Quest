@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -9,11 +10,13 @@ public class PlayerController : MonoBehaviour
     public float MinY = -4.0f;
     public float MaxMinX = 7.0f;
     public GameObject BulletsParent;
+    //added
+    public bool canMove;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        canMove = true;
     }
 
     // Update is called once per frame
@@ -48,5 +51,16 @@ public class PlayerController : MonoBehaviour
 
         transform.position = nextPosition;
         BulletsParent.transform.position = transform.position;
+        //added
+        if (canMove == false)
+        {
+            Speed = 0f;
+            return;
+        }
+        if (canMove == true) 
+        {
+            Speed = 6f;
+            return; 
+        }
     }
 }
