@@ -14,6 +14,8 @@ public class Example : MonoBehaviour
     public float decreaseSpeed = 5f;
     public float increaseSpeed = 5f;
     private PlayerController submarineFreeze;
+    private float DernierPlongeurPris = 0f;
+    public float IntervalDePlongeur = 1f;
 
     void Start()
     {
@@ -22,6 +24,7 @@ public class Example : MonoBehaviour
 
     void Update()
     {
+        DernierPlongeurPris += Time.deltaTime;
         if (submarine.position.y < descentThreshold)
         {
             DecreaseOxygen();
@@ -30,7 +33,13 @@ public class Example : MonoBehaviour
         {
             IncreaseOxygen();
             submarineFreeze.canMove = false;
-            if (oxyLevel > 99) { submarineFreeze.canMove = true; }
+            if (submarineFreeze.NombreDePlongeur > 0 && DernierPlongeurPris > IntervalDePlongeur)
+            {
+                submarineFreeze.ScoreHandler.AjouterScore(420);
+                submarineFreeze.NombreDePlongeur--;
+            }
+            if (oxyLevel > 99) 
+                submarineFreeze.canMove = true;
         }
         if (oxyLevel <= 0)
         {
