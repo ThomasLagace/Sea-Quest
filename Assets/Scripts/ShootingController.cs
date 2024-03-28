@@ -17,13 +17,19 @@ public class ShootingController : MonoBehaviour
 
     void ShootBullet()
     {
-        RaycastHit2D hit = Physics2D.Raycast(new(Cannon.transform.position.x, Cannon.transform.position.y), Mathf.Abs(transform.rotation.y) == 1 ? Vector2.left : Vector2.right);
+        Vector2 rayOrigin = new Vector2(Cannon.transform.position.x, Cannon.transform.position.y);
+        Vector2 rayDirection = Mathf.Abs(transform.rotation.y) == 1 ? Vector2.left : Vector2.right;
 
-        if (hit.collider != null && hit.collider.tag == "Enemie")
+        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, rayDirection);
+
+        if (hit.collider != null && hit.collider.tag == "Enemy")
         {
             GameObject copieLaser = Instantiate(Laser);
             copieLaser.transform.position = Cannon.transform.position;
-            copieLaser.GetComponent<LineRenderer>().SetPosition(1, hit.collider.transform.position);
+            LineRenderer lineRenderer = copieLaser.GetComponent<LineRenderer>();
+            lineRenderer.SetPosition(0, Cannon.transform.position);
+            lineRenderer.SetPosition(1, hit.point);
+            Destroy(hit.collider.gameObject);
         }
     }
 }
