@@ -123,7 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
-<<<<<<< Updated upstream
 --- !u!1 &210564765
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,8 +416,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseMenu: {fileID: 1572593270}
-=======
->>>>>>> Stashed changes
 --- !u!1 &235490262
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,9 +602,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream
---- !u!114 &372034956
-=======
 --- !u!1 &436060749
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,21 +621,11 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!114 &436060750
->>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
-  m_GameObject: {fileID: 372034953}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0647e86e51a415a47b33e75687d46484, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PauseMenu: {fileID: 1572593270}
-=======
   m_GameObject: {fileID: 436060749}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -678,7 +662,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minX: -9
   maxX: 9
->>>>>>> Stashed changes
 --- !u!224 &505147601 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6534923862754380411, guid: f8fc0df9560b29f428797208e5e9cc88, type: 3}
@@ -951,7 +934,6 @@ MonoBehaviour:
   descentThreshold: 3
   decreaseSpeed: 2.8
   increaseSpeed: 50
-<<<<<<< Updated upstream
 --- !u!1 &1161520857
 GameObject:
   m_ObjectHideFlags: 0
@@ -1086,8 +1068,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1161520857}
   m_CullTransparentMesh: 1
-=======
->>>>>>> Stashed changes
 --- !u!1 &1248695760
 GameObject:
   m_ObjectHideFlags: 0
@@ -2182,9 +2162,6 @@ SceneRoots:
   - {fileID: 1248695762}
   - {fileID: 2078045489}
   - {fileID: 372034955}
-<<<<<<< Updated upstream
   - {fileID: 1572593271}
-=======
   - {fileID: 3846366870647902645}
   - {fileID: 436060751}
->>>>>>> Stashed changes
