@@ -123,6 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+<<<<<<< Updated upstream
 --- !u!1 &210564765
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,6 +417,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseMenu: {fileID: 1572593270}
+=======
+>>>>>>> Stashed changes
 --- !u!1 &235490262
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,28 +558,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 193077686040780738, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
   m_PrefabInstance: {fileID: 3846366870647902645}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &255825506 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7868530415648387537, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
-  m_PrefabInstance: {fileID: 3846366870647902645}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &255825507
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 255825505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99e95927aaabc1243812802e71c37d1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 814501897789557598, guid: fcc343aafcd86004ba29c34d044d2878, type: 3}
-  bulletTransform: {fileID: 255825506}
-  cannonTransform: {fileID: 255825506}
-  canFire: 1
-  timeBetweenFiring: 0.3
 --- !u!1 &372034953
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,12 +605,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!114 &372034956
+=======
+--- !u!1 &436060749
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 436060751}
+  - component: {fileID: 436060750}
+  - component: {fileID: 436060752}
+  m_Layer: 0
+  m_Name: BulletsParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &436060750
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 372034953}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -637,6 +641,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseMenu: {fileID: 1572593270}
+=======
+  m_GameObject: {fileID: 436060749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c0fd5628275100409dd31e5b3a605ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameObject: {fileID: 835235694}
+--- !u!4 &436060751
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436060749}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.21353196, y: 2.7641056, z: -0.024395172}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &436060752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436060749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3c18be7fbb326d4ba19c0014bfd16a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minX: -9
+  maxX: 9
+>>>>>>> Stashed changes
 --- !u!224 &505147601 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6534923862754380411, guid: f8fc0df9560b29f428797208e5e9cc88, type: 3}
@@ -909,6 +951,7 @@ MonoBehaviour:
   descentThreshold: 3
   decreaseSpeed: 2.8
   increaseSpeed: 50
+<<<<<<< Updated upstream
 --- !u!1 &1161520857
 GameObject:
   m_ObjectHideFlags: 0
@@ -1043,6 +1086,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1161520857}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> Stashed changes
 --- !u!1 &1248695760
 GameObject:
   m_ObjectHideFlags: 0
@@ -2026,11 +2071,11 @@ PrefabInstance:
     - target: {fileID: 1265296696343389323, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
       propertyPath: Bullet
       value: 
-      objectReference: {fileID: 112893053}
+      objectReference: {fileID: 814501897789557598, guid: fcc343aafcd86004ba29c34d044d2878, type: 3}
     - target: {fileID: 1265296696343389323, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
       propertyPath: Cannon
       value: 
-      objectReference: {fileID: 255825506}
+      objectReference: {fileID: 255825505}
     - target: {fileID: 1265296696343389323, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
       propertyPath: BallsParent
       value: 
@@ -2042,7 +2087,7 @@ PrefabInstance:
     - target: {fileID: 1265296696343389323, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
       propertyPath: BulletsParent
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 436060749}
     - target: {fileID: 1331931907413672896, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.6945493
@@ -2126,19 +2171,20 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1982005905431299565, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
       insertIndex: -1
       addedObject: {fileID: 835235701}
-    - targetCorrespondingSourceObject: {fileID: 193077686040780738, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 255825507}
   m_SourcePrefab: {fileID: 100100000, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
-  - {fileID: 3846366870647902645}
   - {fileID: 1916737345}
   - {fileID: 741684473}
   - {fileID: 1248695762}
   - {fileID: 2078045489}
   - {fileID: 372034955}
+<<<<<<< Updated upstream
   - {fileID: 1572593271}
+=======
+  - {fileID: 3846366870647902645}
+  - {fileID: 436060751}
+>>>>>>> Stashed changes
