@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         canMove = true;
     }
 
@@ -57,10 +58,10 @@ public class PlayerController : MonoBehaviour
             Speed = 0f;
             return;
         }
-        if (canMove == true) 
+        if (canMove == true)
         {
             Speed = 6f;
-            return; 
+            return;
         }
     }
 }

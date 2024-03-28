@@ -12,7 +12,7 @@ public class Example : MonoBehaviour
     public float descentThreshold = 3f;
     public float decreaseSpeed = 5f;
     public float increaseSpeed = 5f;
-    private PlayerController submarineFreeze; 
+    private PlayerController submarineFreeze;
 
     void Start()
     {
@@ -25,11 +25,11 @@ public class Example : MonoBehaviour
         {
             DecreaseOxygen();
         }
-        else 
+        else
         {
             IncreaseOxygen();
             submarineFreeze.canMove = false;
-            if(oxyLevel >99){ submarineFreeze.canMove = true; }
+            if (oxyLevel > 99) { submarineFreeze.canMove = true; }
         }
     }
 
