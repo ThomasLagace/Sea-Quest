@@ -26,4 +26,12 @@ public class ShootingController : MonoBehaviour
             bulletCopy.GetComponent<Rigidbody2D>().AddForce(new Vector2((transform.eulerAngles.y == 180 ? -1 : 1) * BulletSpeed, 0));
         }
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
+    }
 }

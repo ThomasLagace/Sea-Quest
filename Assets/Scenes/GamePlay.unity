@@ -770,8 +770,10 @@ GameObject:
   - component: {fileID: 741684472}
   - component: {fileID: 741684475}
   - component: {fileID: 741684474}
+  - component: {fileID: 741684476}
+  - component: {fileID: 741684477}
   m_Layer: 0
-  m_Name: Isometric Diamond
+  m_Name: Shark
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -838,7 +840,7 @@ Transform:
   m_GameObject: {fileID: 741684471}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.13, y: 7.02, z: 0}
+  m_LocalPosition: {x: -1.58, y: 6.67, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -880,7 +882,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 0.5}
+    oldSize: {x: 3.6, y: 3.6}
     newSize: {x: 1, y: 0.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -906,6 +908,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vitesse: 2
+--- !u!50 &741684476
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741684471}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!95 &741684477
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741684471}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d98bfbb8001f3c94790a6d72d659ba59, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &835235694 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1982005905431299565, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
@@ -933,6 +983,90 @@ MonoBehaviour:
   descentThreshold: 3
   decreaseSpeed: 2.8
   increaseSpeed: 50
+  IntervalDePlongeur: 1
+--- !u!95 &835235707
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835235694}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7df563ca223df784fa63dab6fdc637f8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!60 &835235708
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835235694}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.6, y: 3.6}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.90999997, y: 0.25}
+      - {x: 0.31, y: 0.59}
+      - {x: 0.11, y: 0.59}
+      - {x: 0.24, y: 0.9}
+      - {x: 0.22, y: 1.04}
+      - {x: -0.049999997, y: 1.04}
+      - {x: -0.29999998, y: 0.59}
+      - {x: -0.77, y: 0.14}
+      - {x: -1.04, y: 0.17}
+      - {x: -1.17, y: -0.099999994}
+      - {x: -1.17, y: -0.48999998}
+      - {x: -1.04, y: -0.71}
+      - {x: -0.63, y: -0.79999995}
+      - {x: 0.77, y: -0.79999995}
+      - {x: 0.79999995, y: -0.78999996}
+      - {x: 1.01, y: -0.59999996}
+      - {x: 1.01, y: 0.14999999}
+  m_UseDelaunayMesh: 0
 --- !u!1 &1161520857
 GameObject:
   m_ObjectHideFlags: 0
@@ -1077,6 +1211,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1248695762}
   - component: {fileID: 1248695763}
+  - component: {fileID: 1248695764}
   m_Layer: 0
   m_Name: GestionSpawnShark
   m_TagString: Untagged
@@ -1111,16 +1246,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2293ff7973cc2846bcd9c59ab430a75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1248695764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248695760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6db3bf6f664192446bbef35feb9661ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   requinPrefab: {fileID: 741684471}
+  plongeurPrefab: {fileID: 5200104804173333180, guid: 214d696be8df4c94b8ff609df947f777, type: 3}
   vitesseMin: 1
   vitesseMax: 5
-  tailleMin: 0.1
-  tailleMax: 1
-  apparitionInterval: 10
-  hauteurMin: -4
-  hauteurMax: 2
-  positionDepartX: 8
-  positionDestructionX: -8
+  apparitionInterval: 5
+  hauteurMin: -4.5
+  hauteurMax: 4.5
+  positionDepartX: 10
+  positionDestructionX: -10
+  chanceSpawnPlongeur: 0.1
 --- !u!1 &1525351609
 GameObject:
   m_ObjectHideFlags: 0
@@ -2071,11 +2218,11 @@ PrefabInstance:
       objectReference: {fileID: 436060749}
     - target: {fileID: 1331931907413672896, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.6945493
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1331931907413672896, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.6500995
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1331931907413672896, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
       propertyPath: m_LocalScale.z
@@ -2125,6 +2272,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Submarine
       objectReference: {fileID: 0}
+    - target: {fileID: 2156800699407572331, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 66daa1e5587f4714da1f684fa97def09, type: 3}
     - target: {fileID: 2694640167559581306, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
       propertyPath: MaxY
       value: 3
@@ -2142,16 +2293,35 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2694640167559581306, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
+      propertyPath: ScoreHandler
+      value: 
+      objectReference: {fileID: 372034954}
+    - target: {fileID: 2694640167559581306, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
       propertyPath: BulletsParent
       value: 
       objectReference: {fileID: 255825505}
-    m_RemovedComponents: []
+    - target: {fileID: 5166826571859077959, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 3.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166826571859077959, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 3.6
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5166826571859077959, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1982005905431299565, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
       insertIndex: -1
       addedObject: {fileID: 835235701}
+    - targetCorrespondingSourceObject: {fileID: 1982005905431299565, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 835235708}
+    - targetCorrespondingSourceObject: {fileID: 1982005905431299565, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 835235707}
   m_SourcePrefab: {fileID: 100100000, guid: 8582300addc1d2147a857284a48b3a52, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
