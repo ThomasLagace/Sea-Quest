@@ -450,8 +450,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 354, y: 247}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 289.54077, y: 245.28113}
+  m_SizeDelta: {x: 328.9184, y: 46.5622}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &235490264
 MonoBehaviour:
@@ -565,7 +565,6 @@ GameObject:
   m_Component:
   - component: {fileID: 372034955}
   - component: {fileID: 372034954}
-  - component: {fileID: 372034956}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1115,6 +1114,8 @@ MonoBehaviour:
   requinPrefab: {fileID: 741684471}
   vitesseMin: 1
   vitesseMax: 5
+  tailleMin: 0.1
+  tailleMax: 1
   apparitionInterval: 10
   hauteurMin: -4
   hauteurMax: 2
