@@ -177,7 +177,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -246,7 +246,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 10
-  MaxHeight: 2.5
+  MaxY: 3
+  MinY: -4
+  MaxMinX: 7
+  BulletsParent: {fileID: 0}
+  NombreDePlongeur: 0
+  MaxPlongeur: 5
+  ScoreHandler: {fileID: 0}
+  Vies: 5
+  canMove: 0
 --- !u!114 &1265296696343389323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,10 +267,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c512c93bd6d247943832463669f7396b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 814501897789557598, guid: fcc343aafcd86004ba29c34d044d2878, type: 3}
+  Laser: {fileID: 0}
   Cannon: {fileID: 193077686040780738}
-  BulletSpeed: 40
-  ShootingRate: 1
+  ScoreHandler: {fileID: 0}
 --- !u!1 &3797639490243079617
 GameObject:
   m_ObjectHideFlags: 0

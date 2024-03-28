@@ -1,39 +1,58 @@
 using System.Collections;
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
-public class GestionSharkSpawn : MonoBehaviour
+public class GestionRequins : MonoBehaviour
 {
     public GameObject requinPrefab;
+    public GameObject plongeurPrefab;
     public float vitesseMin = 1f;
     public float vitesseMax = 5f;
-    public float tailleMin = 0.1f;
-    public float tailleMax = 1f;
     public float apparitionInterval = 5f;
     public float hauteurMin = -4.5f;
     public float hauteurMax = 4.5f;
     public float positionDepartX = 10f;
     public float positionDestructionX = -10f;
+    public float chanceSpawnPlongeur = 0.1f;
 
     private List<float> positionsXUtilisees = new List<float>();
 
     void Start()
     {
+        // Lancer la génération de requins
         InvokeRepeating("GenererRequin", 0f, apparitionInterval);
     }
 
     void GenererRequin()
     {
+        // Déterminer aléatoirement si le requin vient de la gauche ou de la droite
+        bool spawnVersLaGauche = (Random.Range(0, 2) == 0);
+
+        // Générer une nouvelle position X
         float nouvellePosX = GenererNouvellePositionX();
 
-        GameObject requinClone = Instantiate(requinPrefab, new Vector3(nouvellePosX, Random.Range(hauteurMin, hauteurMax), 0f), Quaternion.identity);
+        // Créer une copie
+        GameObject clone;
+        if (Random.Range(0f, 1f) < chanceSpawnPlongeur)
+            clone = Instantiate(plongeurPrefab, new Vector3(nouvellePosX, Random.Range(hauteurMin, hauteurMax), 0f), Quaternion.identity);
+        else
+            clone = Instantiate(requinPrefab, new Vector3(nouvellePosX, Random.Range(hauteurMin, hauteurMax), 0f), Quaternion.identity);
+
+        // Récupérer le composant SharkMvt
+        SharkMvt sharkMvt = clone.GetComponent<SharkMvt>();
+        if (sharkMvt != null)
+        {
+            // Ajuster la direction de déplacement du requin
+            sharkMvt.AjusterDirectionSpawn(!spawnVersLaGauche);
+        }
 
         // Vérifier si le requin a un Rigidbody2D
-        Rigidbody2D rigidbodyRequin = requinClone.GetComponent<Rigidbody2D>();
+        Rigidbody2D rigidbodyRequin = clone.GetComponent<Rigidbody2D>();
         if (rigidbodyRequin != null)
         {
-            // Assigner la vitesse
-            rigidbodyRequin.velocity = new Vector2(Random.Range(vitesseMin, vitesseMax), 0f);
+            // Assigner la vélocité
+            float vitesse = spawnVersLaGauche ? -Random.Range(vitesseMin, vitesseMax) : Random.Range(vitesseMin, vitesseMax);
+            rigidbodyRequin.velocity = new Vector2(vitesse, 0f);
         }
         else
         {
@@ -65,10 +84,15 @@ public class GestionSharkSpawn : MonoBehaviour
         {
             if (requin.position.x < positionDestructionX)
             {
+                // Retirer la position X utilisée de la liste
                 positionsXUtilisees.Remove(requin.position.x);
 
+                // Détruire le requin
                 Destroy(requin.gameObject);
             }
         }
+
+        // Nettoyer la liste des positions X utilisées
+        positionsXUtilisees.RemoveAll(x => x < positionDestructionX);
     }
 }

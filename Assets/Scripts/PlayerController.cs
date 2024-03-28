@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class PlayerController : MonoBehaviour
     public float MinY = -4.0f;
     public float MaxMinX = 7.0f;
     public GameObject BulletsParent;
+    public int NombreDePlongeur = 0;
+    public int MaxPlongeur = 5;
+    public ScoreHandler ScoreHandler;
+    public int Vies = 5;
     //added
     public bool canMove;
 
@@ -62,6 +67,23 @@ public class PlayerController : MonoBehaviour
         {
             Speed = 6f;
             return;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Vérifiez si le gameObject en collision est le sous-marin
+        if (collision.CompareTag("Enemy"))
+        {
+            // Réinitialisez la scène
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        if (collision.CompareTag("Plongeur"))
+        {
+            if (NombreDePlongeur >= MaxPlongeur)
+                return;
+            NombreDePlongeur++;
+            Destroy(collision.gameObject);
         }
     }
 }
