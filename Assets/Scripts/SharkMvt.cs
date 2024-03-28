@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SharkMvt : MonoBehaviour
 {
@@ -58,6 +59,16 @@ public class SharkMvt : MonoBehaviour
         {
             Vector3 position = transform.position;
             transform.position = new Vector3(-position.x, position.y, position.z);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        // Vérifiez si le gameObject en collision est le sous-marin
+        if (other.CompareTag("Player"))
+        {
+            // Réinitialisez la scène
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }

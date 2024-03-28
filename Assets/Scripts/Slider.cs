@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Example : MonoBehaviour
@@ -30,6 +31,10 @@ public class Example : MonoBehaviour
             IncreaseOxygen();
             submarineFreeze.canMove = false;
             if (oxyLevel > 99) { submarineFreeze.canMove = true; }
+        }
+        if (oxyLevel <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 

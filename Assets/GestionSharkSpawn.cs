@@ -85,5 +85,8 @@ public class GestionRequins : MonoBehaviour
                 Destroy(requin.gameObject);
             }
         }
+
+        // Nettoyer la liste des positions X utilisées
+        positionsXUtilisees.RemoveAll(x => x < positionDestructionX);
     }
 }
