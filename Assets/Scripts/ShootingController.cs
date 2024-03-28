@@ -4,34 +4,26 @@ using UnityEngine;
 
 public class ShootingController : MonoBehaviour
 {
-    public GameObject Laser;
+    public GameObject Bullet;
     public GameObject Cannon;
-    public ScoreHandler ScoreHandler;
+    public GameObject BulletsParent;
+    public float BulletSpeed = 1.0f;
+    public float ShootingRate = 1.0f;
 
+    void Start()
+    {
+
+    }
+    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            ShootBullet();
-        }
-    }
-
-    void ShootBullet()
-    {
-        Vector2 rayOrigin = new Vector2(Cannon.transform.position.x, Cannon.transform.position.y);
-        Vector2 rayDirection = Mathf.Abs(transform.rotation.y) == 1 ? Vector2.left : Vector2.right;
-
-        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, rayDirection);
-
-        if (hit.collider != null && hit.collider.tag == "Enemy")
-        {
-            this.ScoreHandler.AjouterScore(20);
-            GameObject copieLaser = Instantiate(Laser);
-            copieLaser.transform.position = Cannon.transform.position;
-            LineRenderer lineRenderer = copieLaser.GetComponent<LineRenderer>();
-            lineRenderer.SetPosition(0, Cannon.transform.position);
-            lineRenderer.SetPosition(1, hit.point);
-            Destroy(hit.collider.gameObject);
+            GameObject bulletCopy = Instantiate(Bullet);
+            bulletCopy.transform.parent = BulletsParent.transform;
+            bulletCopy.transform.position = Cannon.transform.position;
+            // TODO: ne pas avoir "(transform.eulerAngles.y == 180 ? -1 : 1)" et shooter selon la direction pointe
+            bulletCopy.GetComponent<Rigidbody2D>().AddForce(new Vector2((transform.eulerAngles.y == 180 ? -1 : 1) * BulletSpeed, 0));
         }
     }
 }

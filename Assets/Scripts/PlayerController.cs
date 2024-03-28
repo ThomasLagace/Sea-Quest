@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
         nextPosition.y = Mathf.Max(nextPosition.y, MinY);
 
         transform.position = nextPosition;
-        BulletsParent.transform.position = transform.position;
+        // BulletsParent.transform.position = transform.position;
         //added
         if (canMove == false)
         {
