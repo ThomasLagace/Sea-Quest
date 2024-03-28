@@ -4,14 +4,8 @@ using UnityEngine;
 
 public class ShootingController : MonoBehaviour
 {
-    public GameObject Bullet;
     public GameObject Laser;
     public GameObject Cannon;
-    public GameObject BulletsParent;
-    public float BulletSpeed = 1.0f;
-    public float ShootingRate = 1.0f;
-    public GameObject LaserParent;
-    public float destroyXPosition = 9f;
 
     void Update()
     {
@@ -23,38 +17,13 @@ public class ShootingController : MonoBehaviour
 
     void ShootBullet()
     {
-        GameObject bulletCopy = Instantiate(Bullet);
-        bulletCopy.transform.parent = BulletsParent.transform;
-        bulletCopy.transform.position = Cannon.transform.position;
+        RaycastHit2D hit = Physics2D.Raycast(new(Cannon.transform.position.x, Cannon.transform.position.y), Mathf.Abs(transform.rotation.y) == 1 ? Vector2.left : Vector2.right);
 
-        Vector2 bulletDirection = (transform.eulerAngles.y == 180 ? Vector2.left : Vector2.right); // Détermine la direction de la balle en fonction de la rotation du joueur
-        bulletCopy.GetComponent<Rigidbody2D>().AddForce(bulletDirection * BulletSpeed);
-
-        RaycastHit2D hit = Physics2D.Raycast(Cannon.transform.position, bulletDirection);
-
-        if (hit.collider != null && hit.collider.tag == "Enemy")
+        if (hit.collider != null && hit.collider.tag == "Enemie")
         {
-            
-        }
-        if (hit.collider != null && hit.collider.CompareTag("Enemy"))
-        {
-            Destroy(hit.collider.gameObject);
-        }
-
-        StartCoroutine(DestroyBulletAtLimit(bulletCopy)); 
-    }
-
-
-    IEnumerator DestroyBulletAtLimit(GameObject bullet)
-    {
-        while (true)
-        {
-            yield return null;
-            if (bullet.transform.position.x >= destroyXPosition || bullet.transform.position.x <= -destroyXPosition)
-            {
-                Destroy(bullet);
-                yield break;
-            }
+            GameObject copieLaser = Instantiate(Laser);
+            copieLaser.transform.position = Cannon.transform.position;
+            copieLaser.GetComponent<LineRenderer>().SetPosition(1, hit.collider.transform.position);
         }
     }
 }
