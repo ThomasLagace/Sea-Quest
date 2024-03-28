@@ -61,4 +61,14 @@ public class SharkMvt : MonoBehaviour
             transform.position = new Vector3(-position.x, position.y, position.z);
         }
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        // Vérifiez si le gameObject en collision est le sous-marin
+        if (other.CompareTag("Player"))
+        {
+            // Réinitialisez la scène
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+    }
 }
