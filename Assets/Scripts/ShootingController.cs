@@ -6,6 +6,7 @@ public class ShootingController : MonoBehaviour
 {
     public GameObject Laser;
     public GameObject Cannon;
+    public ScoreHandler ScoreHandler;
 
     void Update()
     {
@@ -21,6 +22,7 @@ public class ShootingController : MonoBehaviour
 
         if (hit.collider != null && hit.collider.tag == "Enemie")
         {
+            this.ScoreHandler.AjouterScore(20);
             GameObject copieLaser = Instantiate(Laser);
             copieLaser.transform.position = Cannon.transform.position;
             copieLaser.GetComponent<LineRenderer>().SetPosition(1, hit.collider.transform.position);
